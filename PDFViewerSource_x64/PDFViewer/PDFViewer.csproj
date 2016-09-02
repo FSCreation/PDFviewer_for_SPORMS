@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{304D061D-CC1B-43A2-B106-AC2AAEE2004B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PDFViewer</RootNamespace>
+    <AssemblyName>PDFViewer</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PDFLibNet, Version=1.0.6.6, Culture=neutral, PublicKeyToken=26d87f7d66fb2aee, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\PDFLibNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\ILockBytesOverStream.cs" />
+    <Compile Include="API\ManagedAPIClasses.cs" />
+    <Compile Include="API\NativeAPIStructures.cs" />
+    <Compile Include="KeyboardHookLib.cs" />
+    <Compile Include="PDFViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PDFViewerForm.Designer.cs">
+      <DependentUpon>PDFViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="API\SafeFileApiNativeMethods.cs" />
+    <Compile Include="API\SafeNativeMethods.cs" />
+    <Compile Include="API\UnsafeFileApiNativeMethods.cs" />
+    <Compile Include="API\UnsafeNativeMethods.cs" />
+    <EmbeddedResource Include="PDFViewerForm.resx">
+      <DependentUpon>PDFViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dmdskres_373_9_16x16x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FeedbackTool_109_12_16x16x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\files_export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\match_width_16_hot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netshell_1607_9_16x16x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netshell_1611_1_16x16x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netshell_21611_1_16x16x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintBrmUi_102_6_16x16x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\psr_206_4_16x16x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RefreshDocView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchFolder_323_3_16x16x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tshadowdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tshadowdownleft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tshadowdownright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tshadowright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tshadowtopright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZoomIn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZoomOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomdropdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clockwise90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\counterclockwise90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clockwise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Counterclockwise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clockwise1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Counterclockwise1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
